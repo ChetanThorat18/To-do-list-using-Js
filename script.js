@@ -59,6 +59,7 @@ and removes it from the document using the remove() method. */
 let clearAll = document.querySelector('.del-All');
 clearAll.addEventListener("click",function(){
     ul.innerHTML="";
+     updateTotalCount();
 })
 
 
@@ -71,3 +72,14 @@ function updateTotalCount(){
 
     pendingTaskElement.textContent = pendingTaskCount;
 }
+
+
+function clearAllTasks() {
+  todoList.innerHTML = "";
+  updatePendingTasks(0); // Update the count to 0 after clearing all tasks
+}
+
+function updatePendingTasks(count) {
+  pendingTasks.textContent = count;
+}
+
